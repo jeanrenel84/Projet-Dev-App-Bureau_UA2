@@ -18,9 +18,9 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
         public string Email { get; set; }
 
 
-        //Cle etrangere
+        //Cle etrangere vers la classe Role
         public int IdRole { get; set; }
-        public Role Role { get; set; }
+        public Role Roles { get; set; }
       
        
 

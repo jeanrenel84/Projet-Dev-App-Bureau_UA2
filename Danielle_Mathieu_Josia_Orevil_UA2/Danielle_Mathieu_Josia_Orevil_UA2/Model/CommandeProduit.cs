@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
 {
-    class CommandeProduit
+    public class CommandeProduit
     {
+        public decimal PrixUnitaire {  get; set; }
+        public int Quantite {  get; set; }
+
+        //Cle etrangere vers Produit 
+        public int IdProduit { get; set; }
+        public Produit Produits { get; set; }
+
+        //cle etrangere vers Commande
+        public int IdCommande { get; set; }
+        public Commande Commandes { get; set; }
     }
 }
