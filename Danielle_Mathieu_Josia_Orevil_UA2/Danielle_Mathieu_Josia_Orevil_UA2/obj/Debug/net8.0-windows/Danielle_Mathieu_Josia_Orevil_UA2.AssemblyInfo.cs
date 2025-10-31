@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Danielle_Mathieu_Josia_Orevil_UA2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3acab055dfd952fb608a7fecb8f4277adaa754b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+003a70f59c9455026e196f8b0f55bbdeeb35b5f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Danielle_Mathieu_Josia_Orevil_UA2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Danielle_Mathieu_Josia_Orevil_UA2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
