@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|c:\\users\\orevi\\onedrive\\desktop\\ua2c#project\\danielle_mathieu_josia_orevil_ua2\\danielle_mathieu_josia_orevil_ua2\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|solutionrelative:danielle_mathieu_josia_orevil_ua2\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Migrations\\20251101161620_initDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Danielle_Mathieu_Josia_Orevil_UA2\\Migrations\\20251101161620_initDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|c:\\users\\orevi\\onedrive\\desktop\\ua2c#project\\danielle_mathieu_josia_orevil_ua2\\danielle_mathieu_josia_orevil_ua2\\model\\commandeproduit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|solutionrelative:danielle_mathieu_josia_orevil_ua2\\model\\commandeproduit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|c:\\users\\orevi\\onedrive\\desktop\\ua2c#project\\danielle_mathieu_josia_orevil_ua2\\danielle_mathieu_josia_orevil_ua2\\model\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|solutionrelative:danielle_mathieu_josia_orevil_ua2\\model\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|c:\\users\\orevi\\onedrive\\desktop\\ua2c#project\\danielle_mathieu_josia_orevil_ua2\\danielle_mathieu_josia_orevil_ua2\\model\\commande.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|solutionrelative:danielle_mathieu_josia_orevil_ua2\\model\\commande.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|c:\\users\\orevi\\onedrive\\desktop\\ua2c#project\\danielle_mathieu_josia_orevil_ua2\\danielle_mathieu_josia_orevil_ua2\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|solutionrelative:danielle_mathieu_josia_orevil_ua2\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|c:\\users\\orevi\\onedrive\\desktop\\ua2c#project\\danielle_mathieu_josia_orevil_ua2\\danielle_mathieu_josia_orevil_ua2\\model\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|solutionrelative:danielle_mathieu_josia_orevil_ua2\\model\\produit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{444C365E-E4CF-4022-9430-587B4CBC3793}|Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2.csproj|c:\\users\\orevi\\onedrive\\desktop\\ua2c#project\\danielle_mathieu_josia_orevil_ua2\\danielle_mathieu_josia_orevil_ua2\\model\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,12 +39,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20251101161620_initDB.cs",
+              "DocumentMoniker": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Migrations\\20251101161620_initDB.cs",
+              "RelativeDocumentMoniker": "Danielle_Mathieu_Josia_Orevil_UA2\\Migrations\\20251101161620_initDB.cs",
+              "ToolTip": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Migrations\\20251101161620_initDB.cs",
+              "RelativeToolTip": "Danielle_Mathieu_Josia_Orevil_UA2\\Migrations\\20251101161620_initDB.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T16:16:20.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Danielle_Mathieu_Josia_Orevil_UA2\\Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Danielle_Mathieu_Josia_Orevil_UA2\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAuwCIAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswCIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-31T15:29:52.215Z",
               "EditorCaption": ""
@@ -53,14 +70,14 @@
               "RelativeDocumentMoniker": "Danielle_Mathieu_Josia_Orevil_UA2\\Model\\CommandeProduit.cs",
               "ToolTip": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Model\\CommandeProduit.cs",
               "RelativeToolTip": "Danielle_Mathieu_Josia_Orevil_UA2\\Model\\CommandeProduit.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-31T03:48:53.94Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Produit.cs",
               "DocumentMoniker": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Produit.cs",
               "RelativeDocumentMoniker": "Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Produit.cs",
@@ -68,12 +85,11 @@
               "RelativeToolTip": "Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Produit.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T03:48:31.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T03:48:31.367Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Commande.cs",
               "DocumentMoniker": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Commande.cs",
               "RelativeDocumentMoniker": "Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Commande.cs",
@@ -86,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\orevi\\OneDrive\\Desktop\\UA2C#Project\\Danielle_Mathieu_Josia_Orevil_UA2\\Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Client.cs",
               "RelativeDocumentMoniker": "Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Client.cs",
@@ -94,8 +110,7 @@
               "RelativeToolTip": "Danielle_Mathieu_Josia_Orevil_UA2\\Model\\Client.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T03:46:51.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-31T03:46:51.827Z"
             }
           ]
         }
