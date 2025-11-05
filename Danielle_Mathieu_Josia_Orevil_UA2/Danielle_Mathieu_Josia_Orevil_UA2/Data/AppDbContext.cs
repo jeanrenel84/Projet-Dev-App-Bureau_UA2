@@ -43,7 +43,17 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Data
                 .HasOne(cp => cp.Produits)
                 .WithMany(p => p.CommandeProduits)
                 .HasForeignKey(cp => cp.IdProduit);
-           }
+            base.OnModelCreating(modelBuilder);
+
+            // relation utilisateur et roles
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Roles)
+                .WithMany(r => r.Users)
+                .HasForeignKey(u => u.IdRole);
+
+
+
+        }
 
         }
 }

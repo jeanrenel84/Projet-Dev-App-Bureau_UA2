@@ -99,14 +99,14 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                     UserPassword = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     IdRole = table.Column<int>(type: "INTEGER", nullable: false),
-                    RolesIdRole = table.Column<int>(type: "INTEGER", nullable: false)
+                 
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.IdUser);
                     table.ForeignKey(
-                        name: "FK_Users_Roles_RolesIdRole",
-                        column: x => x.RolesIdRole,
+                        name: "FK_Users_Roles_IdRole",
+                        column: x => x.IdRole,
                         principalTable: "Roles",
                         principalColumn: "IdRole",
                         onDelete: ReferentialAction.Cascade);

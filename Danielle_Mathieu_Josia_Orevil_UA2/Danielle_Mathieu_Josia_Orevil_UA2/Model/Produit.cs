@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
 {
-    public class Produit
+    public class Produit : ObservableObject
     {
         [Key]
         public int IdProduit { get; set; }

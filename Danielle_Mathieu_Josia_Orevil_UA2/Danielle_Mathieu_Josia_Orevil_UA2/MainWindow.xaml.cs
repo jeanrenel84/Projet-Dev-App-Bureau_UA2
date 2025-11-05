@@ -20,5 +20,10 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2
         {
             InitializeComponent();
         }
+
+        private void LoginView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

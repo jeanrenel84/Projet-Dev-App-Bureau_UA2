@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
 {
-   public class Commande
+   public class Commande : ObservableObject
     {
         [Key]
         public int IdCommande { get; set; }
-        public DateTime dateCommande { get; set; }= DateTime.Now;
+        [ObservableProperty]
+        public DateTime dateCommande= DateTime.Now;
 
         //Cle etrangere vers client
         public int idClient { get; set; }   

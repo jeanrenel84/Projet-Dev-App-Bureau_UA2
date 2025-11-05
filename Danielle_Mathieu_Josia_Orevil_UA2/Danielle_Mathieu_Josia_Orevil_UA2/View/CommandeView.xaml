@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Danielle_Mathieu_Josia_Orevil_UA2.View.CommandeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Danielle_Mathieu_Josia_Orevil_UA2.View"
+               xmlns:vm="clr-namespace:Danielle_Mathieu_Josia_Orevil_UA2.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <vm:CommandeViewModel/>
+    </UserControl.DataContext>
+    <Grid Background="#E8F0FE">
+        <StackPanel HorizontalAlignment="Center" Width="350">
+
+            <TextBlock Text="Gestion des Commandes"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+
+
+            <TextBlock Text="ID Client" />
+            <TextBox Text="{Binding SelectedCommande.idClient}" />
+            <TextBlock Text="Date Commande" />
+            <TextBox Text="{Binding SelectedCommande.dateCommande}" />
+            <ListBox ItemsSource="{Binding Commandes}"
+                SelectedItem="{Binding SelectedCommande}"
+                DisplayMemberPath="idClient" Margin="87,128,127,45" Height="116" Width="236"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Command="{Binding AddCommandeCommand}" Content="Ajouter" Width="100"/>
+                <Button Command="{Binding UpdateCommandeCommand}" Content="Modifier" Width="100"/>
+                <Button Command="{Binding DeleteCommandeCommand}" Content="Supprimer" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+
+       
+
+    </Grid>
+
+</UserControl>
