@@ -11,12 +11,8 @@
     <UserControl.DataContext>
         <vm:UserViewModel/>
     </UserControl.DataContext>
-    <Grid Background="#E8F0FE">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="159*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel HorizontalAlignment="Left" Width="350" Margin="225,0,0,0">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Width="350">
 
             <TextBlock Text="Gestion des Utilisateurs"
                    FontSize="20"

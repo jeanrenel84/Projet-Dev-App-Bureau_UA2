@@ -14,7 +14,7 @@
     </UserControl.DataContext>
 
 
-    <Grid Background="#E8F0FE">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>

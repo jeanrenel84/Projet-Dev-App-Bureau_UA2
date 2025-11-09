@@ -4,6 +4,31 @@
              xmlns:local="clr-namespace:Danielle_Mathieu_Josia_Orevil_UA2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <!--Coleur du Background-->
+        <Color x:Key="BackgroundColor">#D1B3FF</Color>
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
+
+        <!-- La couleur est appliquer sur tout le projet -->
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        </Style>
+
+        <Style TargetType="UserControl">
+            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        </Style>
+
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        </Style>
+
+        <Style TargetType="ContentControl">
+            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        </Style>
+
     </Application.Resources>
 </Application>
