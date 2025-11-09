@@ -26,6 +26,9 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
         public ICommand NavigateToProduitsCommand { get; }
         public ICommand NavigateToClientsCommand { get; }
         public ICommand NavigateToCommandesCommand { get; }
+        public ICommand NavigateToUsers { get; }
+        public ICommand NavigateToRoles { get; }
+
         public ICommand LogoutCommand { get; }
 
         public MainViewModel()
@@ -33,10 +36,12 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
             NavigateToProduitsCommand = new RelayCommand(() => CurrentView = new ProduitView());
             NavigateToClientsCommand = new RelayCommand(() => CurrentView = new ClientView());
             NavigateToCommandesCommand = new RelayCommand(() => CurrentView = new CommandeView());
+            NavigateToUsers = new RelayCommand(() => CurrentView = new UserView());
+            NavigateToRoles = new RelayCommand(() => CurrentView = new RoleView());
             LogoutCommand = new RelayCommand(Logout);
 
             // Vue par défaut
-            CurrentView = new ClientView(); // ou une vue d'accueil
+             CurrentView = new ClientView(); // ou une vue d'accueil
         }
 
 

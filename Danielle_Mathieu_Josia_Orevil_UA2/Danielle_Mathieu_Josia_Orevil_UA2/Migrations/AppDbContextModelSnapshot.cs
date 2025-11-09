@@ -23,23 +23,23 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("adresse")
+                    b.Property<string>("Adresse")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("nom")
+                    b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("prenom")
+                    b.Property<string>("Prenom")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("telephone")
+                    b.Property<string>("Telephone")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -57,7 +57,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                     b.Property<int>("ClientIdClient")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("dateCommande")
+                    b.Property<DateTime>("DateCommande")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("idClient")
@@ -129,20 +129,15 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("NomRole")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("RoleIdRole")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("tache")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("IdRole");
-
-                    b.HasIndex("RoleIdRole");
 
                     b.ToTable("Roles");
                 });
@@ -168,9 +163,6 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("RolesIdRole")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -181,7 +173,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
 
                     b.HasKey("IdUser");
 
-                    b.HasIndex("RolesIdRole");
+                    b.HasIndex("IdRole");
 
                     b.ToTable("Users");
                 });
@@ -216,18 +208,11 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                     b.Navigation("Produits");
                 });
 
-            modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.Role", b =>
-                {
-                    b.HasOne("Danielle_Mathieu_Josia_Orevil_UA2.Model.Role", null)
-                        .WithMany("Roles")
-                        .HasForeignKey("RoleIdRole");
-                });
-
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.User", b =>
                 {
                     b.HasOne("Danielle_Mathieu_Josia_Orevil_UA2.Model.Role", "Roles")
-                        .WithMany()
-                        .HasForeignKey("RolesIdRole")
+                        .WithMany("Users")
+                        .HasForeignKey("IdRole")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -251,7 +236,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
 
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.Role", b =>
                 {
-                    b.Navigation("Roles");
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

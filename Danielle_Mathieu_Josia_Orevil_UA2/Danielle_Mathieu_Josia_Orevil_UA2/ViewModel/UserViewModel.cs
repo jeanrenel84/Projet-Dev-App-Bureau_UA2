@@ -9,23 +9,44 @@ using System.Windows.Input;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 {
-    public class UserViewModel : ObservableObject
+    public partial class UserViewModel : ObservableObject
     {
         private readonly AppDbContext _context;
-        private ObservableCollection<User> _users;
-        public ObservableCollection<User> Users
-        {
-            get => _users;
-            set => SetProperty(ref _users, value);
-        }
 
+        [ObservableProperty]
+        private ObservableCollection<User> users;
+        /* public ObservableCollection<User> Users
+         {
+             get => _users;
+             set => SetProperty(ref _users, value);
+         }*/
+        [ObservableProperty]
         private User _selectedUser;
-        public User SelectedUser
-        {
-            get => _selectedUser;
-            set => SetProperty(ref _selectedUser, value);
-        }
 
+        [ObservableProperty]
+        private string nom;
+        [ObservableProperty]
+        private string prenom;
+        [ObservableProperty]
+        private string userName;
+        [ObservableProperty]
+        private string userPassword;
+        [ObservableProperty]
+        private string email;
+        //[ObservableProperty]
+        //private int idRole;
+
+
+
+
+        /*  public User SelectedUser
+          {
+              get => _selectedUser;
+              set => SetProperty(ref _selectedUser, value);
+          }*/
+
+        //definition du constructeur
+      
         public ICommand AddUserCommand { get; }
         public ICommand UpdateUserCommand { get; }
         public ICommand DeleteUserCommand { get; }
@@ -35,11 +56,11 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
             _context = new AppDbContext();
 
             AddUserCommand = new RelayCommand(AddUser);
-            UpdateUserCommand = new RelayCommand(UpdateUser);
-            DeleteUserCommand = new RelayCommand(DeleteUser);
+            //UpdateUserCommand = new RelayCommand(UpdateUser);
+            //DeleteUserCommand = new RelayCommand(DeleteUser);
 
             LoadUsers();
-            SelectedUser = new User();
+            //SelectedUser = new User();
         }
 
         private void LoadUsers()
@@ -49,17 +70,38 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 
         private void AddUser()
         {
-            if (SelectedUser == null)
-                return;
+            /*if (SelectedUser == null)
+                return;*/
 
             try
             {
-                _context.Users.Add(SelectedUser);
+                var newUser = new User
+                {
+                    Nom = Nom,
+                    Prenom = Prenom,
+                    UserName = UserName,
+                    UserPassword = UserPassword,
+                    Email = Email,
+                   // IdRole = IdRole
+                };
+                
+                _context.Users.Add(newUser);
                 _context.SaveChanges();
-
-                Users.Add(SelectedUser);
+                Users.Add(newUser);
                 MessageBox.Show("Utilisateur ajouté avec succès !");
-                SelectedUser = new User();
+                nom = string.Empty;
+                prenom = string.Empty;
+                userName = string.Empty;
+                userPassword = string.Empty;
+                email = string.Empty;
+                //idRole = 0;
+
+                /* _context.Users.Add(SelectedUser);
+                 _context.SaveChanges();
+
+                 Users.Add(SelectedUser);
+                 MessageBox.Show("Utilisateur ajouté avec succès !");
+                 SelectedUser = new User();*/
             }
             catch (System.Exception ex)
             {
@@ -67,7 +109,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
             }
         }
 
-        private void UpdateUser()
+       /* private void UpdateUser()
         {
             if (SelectedUser == null)
             {
@@ -112,6 +154,6 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
                     MessageBox.Show("Erreur lors de la suppression : " + ex.Message);
                 }
             }
-        }
+        }*/
     }
 }

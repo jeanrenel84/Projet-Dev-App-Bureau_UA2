@@ -19,11 +19,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-       
-        <StackPanel Grid.Column="0" Background="#FFDDDDDD" VerticalAlignment="Top">
+
+        <StackPanel Grid.Column="0" Background="LightGray" VerticalAlignment="Top">
             <Button Content="Clients" Command="{Binding NavigateToClientsCommand}" Margin="5" Height="40"/>
             <Button Content="Produits" Command="{Binding NavigateToProduitsCommand}" Margin="5" Height="40"/>
             <Button Content="Commandes" Command="{Binding NavigateToCommandesCommand}" Margin="5" Height="40"/>
+            <Button Content="Utilisateurs" Command="{Binding NavigateToUsers}" Margin="5" Height="40"/>
+            <Button Content="Roles" Command="{Binding NavigateToRoles}" Margin="5" Height="40"/>
             <Button Content="Déconnexion" Command="{Binding LogoutCommand}" Margin="5" Height="40"/>
         </StackPanel>
 

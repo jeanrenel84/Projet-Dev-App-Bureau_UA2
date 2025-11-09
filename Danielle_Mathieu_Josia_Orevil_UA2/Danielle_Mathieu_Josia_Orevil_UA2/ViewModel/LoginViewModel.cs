@@ -10,6 +10,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 {
     public partial class LoginViewModel : ObservableObject
     {
+        //creation du contexte de la base de donnees
         private readonly Data.AppDbContext _context;
 
         [ObservableProperty]
@@ -21,17 +22,20 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
         [ObservableProperty]
         private string errorMessage = string.Empty;
 
+        //creation de la commande de login
         public ICommand LoginCommand { get; }
 
+        //definition du constructeur
         public LoginViewModel()
         {
             _context = new Data.AppDbContext();
             LoginCommand = new RelayCommand(Login);
         }
 
+        //definition de la methode de login
         public void Login()
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrEmpty(Username) || string.IsNullOrWhiteSpace(Password))
             {
                 ErrorMessage=("Veuillez entrer un nom d'utilisateur et un mot de passe.");
                 return;
@@ -39,7 +43,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 
             try
             {
-                var user = _context.Users.FirstOrDefault(u => u.UserName == username && u.UserPassword == password);
+                var user = _context.Users.FirstOrDefault(u => u.UserName == Username && u.UserPassword == Password);
 
                 if (user != null)
                 {

@@ -12,7 +12,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
         [Key]
         public int IdRole { get; set; }
         public string NomRole { get; set; }
-        public string tache { get; set; }
+        public string Description { get; set; }
 
         //Relation 1-N avec User
         public ICollection<User> Users { get; set; } 

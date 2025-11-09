@@ -12,14 +12,18 @@
         <vm:UserViewModel/>
     </UserControl.DataContext>
     <Grid Background="#E8F0FE">
-        <StackPanel HorizontalAlignment="Center" Width="350">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" Width="350" Margin="225,0,0,0">
 
             <TextBlock Text="Gestion des Utilisateurs"
                    FontSize="20"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"/>
 
-            
+
 
             <TextBlock Text="Nom:" />
             <TextBox Text="{Binding SelectedUser.Nom}" />
@@ -38,8 +42,8 @@
 
             <TextBlock Text="ID Rôle:" />
             <TextBox Text="{Binding SelectedUser.IdRole}" />
-           
-            
+
+
             <ListBox ItemsSource="{Binding Users}"
             SelectedItem="{Binding SelectedUser}"
             DisplayMemberPath="UserName"
@@ -50,7 +54,7 @@
                 <Button Command="{Binding DeleteUserCommand}" Content="Supprimer" Width="100"/>
             </StackPanel>
 
-         
+
         </StackPanel>
     </Grid>
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
 {
-   public class Commande : ObservableObject
+   public partial class Commande : ObservableObject
     {
         [Key]
         public int IdCommande { get; set; }
