@@ -5,11 +5,11 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <!-- Light purple -->
+        <!--Coleur du Background-->
         <Color x:Key="BackgroundColor">#D1B3FF</Color>
         <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
 
-        <!-- Apply globally to everything that can have a Background -->
+        <!-- La couleur est appliquer sur tout le projet -->
         <Style TargetType="Window">
             <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
         </Style>
