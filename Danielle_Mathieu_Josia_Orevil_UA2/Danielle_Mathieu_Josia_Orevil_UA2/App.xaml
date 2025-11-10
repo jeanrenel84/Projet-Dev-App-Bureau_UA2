@@ -5,11 +5,13 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
-        <!--Coleur du Background-->
-        <Color x:Key="BackgroundColor">#D1B3FF</Color>
+        <!-- Couleur du Background -->
+        <Color x:Key="BackgroundColor">#CBB6FF</Color>
+
+        <!-- Crée un pinceau réutilisable qui change la couleur BackgroundColor -->
         <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
 
-        <!-- La couleur est appliquer sur tout le projet -->
+        <!-- La couleur est appliquée sur tout le projet -->
         <Style TargetType="Window">
             <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
         </Style>
@@ -28,6 +30,30 @@
 
         <Style TargetType="Frame">
             <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        </Style>
+
+        <!-- 🎨 Style des boutons avec meilleures couleurs et contraste -->
+        <Style TargetType="Button">
+            <!-- Couleur de base du bouton -->
+            <Setter Property="Background" Value="#9E77FF" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="8,4" />
+            <Setter Property="Cursor" Value="Hand" />
+
+            <!-- Effets au survol et au clic -->
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#8256E0"/>
+                    <!-- Couleur hover -->
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#693CCF"/>
+                    <!-- Couleur click -->
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
     </Application.Resources>
