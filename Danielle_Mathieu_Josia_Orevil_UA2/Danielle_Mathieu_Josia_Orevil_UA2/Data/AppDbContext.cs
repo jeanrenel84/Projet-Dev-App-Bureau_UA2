@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.Data
 {
@@ -16,6 +17,14 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Data
         public DbSet<Model.Commande> Commandes { get; set; }
         public DbSet<Model.Produit> Produits { get; set; }
         public DbSet<Model.CommandeProduit> CommandeProduits { get; set; }
+
+        //Creation du chemin absolu vers la base de donnees
+        /*  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+          {
+              string dbPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sysgestock.db");
+             // MessageBox.Show("Path: " + dbPath);
+              optionsBuilder.UseSqlite($"Data Source={dbPath}");
+          }*/
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -30,26 +39,26 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Data
             
             // Creation de la clé composee pour CommandeProduit
             modelBuilder.Entity<CommandeProduit>()
-                .HasKey(cp => new { cp.IdCommande, cp.IdProduit });
+                .HasKey(cp => new { cp.idCommande, cp.idProduit });
 
             // Relation entre Commande  et CommandeProduit (1-N)
             modelBuilder.Entity<CommandeProduit>()
                 .HasOne(cp => cp.Commandes)
                 .WithMany(c => c.CommandeProduits)
-                .HasForeignKey(cp => cp.IdCommande);
+                .HasForeignKey(cp => cp.idCommande);
 
             // Relation entre Produit et CommandeProduit (1-N)
             modelBuilder.Entity<CommandeProduit>()
                 .HasOne(cp => cp.Produits)
                 .WithMany(p => p.CommandeProduits)
-                .HasForeignKey(cp => cp.IdProduit);
+                .HasForeignKey(cp => cp.idProduit);
             base.OnModelCreating(modelBuilder);
 
             // relation utilisateur et roles
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Roles)
                 .WithMany(r => r.Users)
-                .HasForeignKey(u => u.IdRole);
+                .HasForeignKey(u => u.idRole);
 
 
 

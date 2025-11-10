@@ -22,21 +22,25 @@
                        Margin="0,0,0,10"/>
 
             <TextBlock Text="Nom Role:" />
-            <TextBox Text="{Binding SelectedRole.NomRole, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding RoleName, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock Text="Description :" />
-            <TextBox Text="{Binding SelectedRole.Description, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding RoleDescription, UpdateSourceTrigger=PropertyChanged}" />
 
-            <ListBox ItemsSource="{Binding Roles}"
-                     SelectedItem="{Binding SelectedRole}"
-                     DisplayMemberPath="NomRole"
-                     Height="100"
-                     Margin="0,10,0,0"/>
+            <DataGrid Grid.Row="5" ItemsSource="{Binding Roles}" 
+             AutoGenerateColumns="False" 
+             SelectedItem="{Binding SelectedRole}"
+               CanUserAddRows="False" Margin="0,10,0,10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom Role" Binding="{Binding NomRole}" Width="*"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*"/>                    
+                </DataGrid.Columns>
+            </DataGrid>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
              <Button Command="{Binding AddRoleCommand}" Content="Ajouter" Width="100" Margin="5,0"/>
-                <!--  <Button Command="{Binding UpdateRole}" Content="Modifier" Width="100" Margin="5,0"/>
-                <Button Command="{Binding DeleteRole}" Content="Supprimer" Width="100" Margin="5,0"/>-->
+                <Button Command="{Binding UpdateRoleCommand}" Content="Modifier" Width="100" Margin="5,0"/>
+                <Button Command="{Binding DeleteRoleCommand}" Content="Supprimer" Width="100" Margin="5,0"/>
             </StackPanel>
 
         </StackPanel>

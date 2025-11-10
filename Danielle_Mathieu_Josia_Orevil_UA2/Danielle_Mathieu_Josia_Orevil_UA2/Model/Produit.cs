@@ -11,13 +11,13 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
     public class Produit : ObservableObject
     {
         [Key]
-        public int IdProduit { get; set; }
-        public string NomProduit { get; set; }
-        public string Description { get; set; }
-        public string Categorie {  get; set; }
-        public decimal Prix { get; set; }
-        public int QuantiteStock { get; set; }
-        public bool EstDisponible { get; set; }
+        public int idProduit { get; set; }
+        public string nomProduit { get; set; }
+        public string description { get; set; }
+        public string categorie {  get; set; }
+        public decimal prix { get; set; }
+        public int quantiteStock { get; set; }
+        public bool estDisponible { get; set; }
 
         //Relation 1-N avec CommandeProduit
         public ICollection<CommandeProduit> CommandeProduits { get; set; }=new List<CommandeProduit>();

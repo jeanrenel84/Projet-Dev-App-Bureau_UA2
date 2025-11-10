@@ -11,7 +11,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
    public partial class Commande : ObservableObject
     {
         [Key]
-        public int IdCommande { get; set; }
+        public int idCommande { get; set; }
         [ObservableProperty]
         public DateTime dateCommande= DateTime.Now;
 

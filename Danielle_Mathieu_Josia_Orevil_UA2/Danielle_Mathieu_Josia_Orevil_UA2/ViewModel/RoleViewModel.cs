@@ -12,31 +12,18 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 {
     public partial class RoleViewModel : ObservableObject
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext context;
         [ObservableProperty]
-        private ObservableCollection<Role> _roles;
+        private ObservableCollection<Role> roles;
 
         [ObservableProperty]
         private Role selectedRole;
         [ObservableProperty]
-        private string nomRole;
+        private string roleName;
         [ObservableProperty]
-        private string description;
+        private string roleDescription;
 
 
-
-        /* public ObservableCollection<Role> Roles
-         {
-             get => _roles; 
-             set => SetProperty(ref _roles, value); 
-         }*/
-
-        /*private Role _selectedRole; 
-        public Role SelectedRole 
-        {
-            get => _selectedRole;
-            set => SetProperty(ref _selectedRole, value); 
-        }*/
 
         public ICommand AddRoleCommand { get; } 
         public ICommand UpdateRoleCommand { get; } 
@@ -44,19 +31,19 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 
         public RoleViewModel()
         {
-            _context = new AppDbContext();
+            context = new AppDbContext();
 
            AddRoleCommand = new RelayCommand(AddRole);
-           // UpdateRoleCommand = new RelayCommand(UpdateRole);
-            //DeleteRoleCommand = new RelayCommand(DeleteRole);
+           UpdateRoleCommand = new RelayCommand(UpdateRole);
+           DeleteRoleCommand = new RelayCommand(DeleteRole);
 
         LoadRoles();
-       // SelectedRole = new Role();          
-    }
+         
+        }
 
         private void LoadRoles()
         {
-            var allroles = _context.Roles.ToList(); 
+            var allroles = context.Roles.ToList(); 
             Roles = new ObservableCollection<Role>(allroles); 
         }
 
@@ -66,53 +53,62 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
             {
                 var newRole = new Role
                 {
-                    NomRole = NomRole,
-                    Description = Description
+
+                    Description=RoleDescription,
+                    NomRole= RoleName
 
                 };
 
-                _context.Roles.Add(newRole);
-                _context.SaveChanges();
+                context.Roles.Add(newRole);
+                context.SaveChanges();
                 Roles.Add(newRole);
+                MessageBox.Show("Rôle ajouté avec succès !");
 
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Erreur lors de l'ajout : " + ex.Message);
+                  MessageBox.Show("Erreur lors de l'ajout : " + ex.Message);
             }
 
         }
 
 
-        /*
-        private void UpdateRole() // update method name from UpdateClient to UpdateRole
+        
+        private void UpdateRole() 
         {
-            if (SelectedRole == null) // updated variable from SelectedClient to SelectedRole
-            {
-                MessageBox.Show("Veuillez sélectionner un rôle à modifier."); // updated message
+            if (SelectedRole == null)
                 return;
-            }
 
-            if (!SelectedRole.IsValid(out var errors)) // updated variable from SelectedClient to SelectedRole
-            {
-                ShowValidationErrors(errors);
-                return;
-            }
+            SelectedRole.Description = RoleDescription;
+            SelectedRole.NomRole = RoleName;
 
-            try
+            context.Roles.Update(SelectedRole);
+            context.SaveChanges();
+            MessageBox.Show("Rôle mis à jour avec succès !");
+
+            // Optionnel : reset formulaire
+            SelectedRole = null; 
+            RoleDescription = string.Empty; 
+            RoleName = string.Empty;
+        }
+
+        partial void OnSelectedRoleChanged(Role value)
+        {
+            if (value != null)
             {
-                _context.Roles.Update(SelectedRole); // updated from _context.Clients to _context.Roles         
-                _context.SaveChanges();
-                MessageBox.Show("Role modifié avec succès !"); // updated message
-                LoadRoles(); // updated method call from LoadClients to LoadRoles
+                RoleName = value.NomRole;
+                RoleDescription = value.Description;
+
             }
-            catch (System.Exception ex)
+            else
             {
-                MessageBox.Show("Erreur lors de la modification : " + ex.Message);
+                RoleName = string.Empty;
+
+                RoleDescription = string.Empty;
             }
         }
 
-        private void DeleteClient()
+        private void DeleteRole()
         {
             if (SelectedRole == null)
             {
@@ -125,8 +121,8 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
             {
                 try
                 {
-                    _context.Roles.Remove(SelectedRole); // updated from _context.Clients to _context.Roles
-                    _context.SaveChanges();
+                    context.Roles.Remove(SelectedRole); // updated from _context.Clients to _context.Roles
+                    context.SaveChanges();
                     Roles.Remove(SelectedRole); // updated from Clients to Roles
                     MessageBox.Show("Rôle supprimé !"); // updated message
                     SelectedRole = new Role(); // updated from SelectedClient to SelectedRole
@@ -138,10 +134,12 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
             }
         }
 
+       
+
         private void ShowValidationErrors(List<string> errors)
         {
             string errorMessage = string.Join("\n", errors);
             MessageBox.Show(errorMessage, "Erreur de validation", MessageBoxButton.OK, MessageBoxImage.Warning);
-        }*/
+        }
     }
 }

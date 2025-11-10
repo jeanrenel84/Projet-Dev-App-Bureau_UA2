@@ -11,39 +11,26 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 {
     public partial class UserViewModel : ObservableObject
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext context;
 
         [ObservableProperty]
         private ObservableCollection<User> users;
-        /* public ObservableCollection<User> Users
-         {
-             get => _users;
-             set => SetProperty(ref _users, value);
-         }*/
+        
         [ObservableProperty]
-        private User _selectedUser;
+        private User selectedUser;
 
         [ObservableProperty]
-        private string nom;
+        private string userNom;
         [ObservableProperty]
-        private string prenom;
+        private string userPrenom;
         [ObservableProperty]
-        private string userName;
+        private string userUserName;
         [ObservableProperty]
-        private string userPassword;
+        private string userUserPassword;
         [ObservableProperty]
-        private string email;
-        //[ObservableProperty]
-        //private int idRole;
-
-
-
-
-        /*  public User SelectedUser
-          {
-              get => _selectedUser;
-              set => SetProperty(ref _selectedUser, value);
-          }*/
+        private string userEmail;
+  
+      
 
         //definition du constructeur
       
@@ -53,7 +40,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 
         public UserViewModel()
         {
-            _context = new AppDbContext();
+            context = new AppDbContext();
 
             AddUserCommand = new RelayCommand(AddUser);
             //UpdateUserCommand = new RelayCommand(UpdateUser);
@@ -65,46 +52,42 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
 
         private void LoadUsers()
         {
-            Users = new ObservableCollection<User>(_context.Users.ToList());
+            var allUsers = context.Users.ToList();
+            Users = new ObservableCollection<User>(allUsers);
         }
 
         private void AddUser()
         {
-            /*if (SelectedUser == null)
-                return;*/
 
             try
             {
                 var newUser = new User
                 {
-                    Nom = Nom,
-                    Prenom = Prenom,
-                    UserName = UserName,
-                    UserPassword = UserPassword,
-                    Email = Email,
-                   // IdRole = IdRole
+                    Nom = UserNom,
+                    Prenom = UserPrenom,
+                    UserName = UserUserName,
+                    UserPassword = UserUserPassword,
+                    Email = UserEmail,
+                    idRole = 1
                 };
-                
-                _context.Users.Add(newUser);
-                _context.SaveChanges();
+
+                context.Users.Add(newUser);
+                context.SaveChanges();
                 Users.Add(newUser);
                 MessageBox.Show("Utilisateur ajouté avec succès !");
-                nom = string.Empty;
-                prenom = string.Empty;
-                userName = string.Empty;
-                userPassword = string.Empty;
-                email = string.Empty;
-                //idRole = 0;
 
-                /* _context.Users.Add(SelectedUser);
-                 _context.SaveChanges();
-
-                 Users.Add(SelectedUser);
-                 MessageBox.Show("Utilisateur ajouté avec succès !");
-                 SelectedUser = new User();*/
+               /* UserNom = string.Empty;
+                UserPrenom = string.Empty;
+                UserUserName = string.Empty;
+                UserUserPassword = string.Empty;
+                UserEmail = string.Empty;*/
             }
+
             catch (System.Exception ex)
             {
+                string message = ex.Message;
+                if (ex.InnerException != null)
+                    message += "\nInner exception: " + ex.InnerException.Message;
                 MessageBox.Show("Erreur lors de l'ajout : " + ex.Message);
             }
         }

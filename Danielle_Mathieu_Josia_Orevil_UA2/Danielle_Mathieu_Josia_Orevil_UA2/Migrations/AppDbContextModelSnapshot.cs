@@ -19,7 +19,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
 
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.Client", b =>
                 {
-                    b.Property<int>("IdClient")
+                    b.Property<int>("idClient")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -43,18 +43,18 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("IdClient");
+                    b.HasKey("idClient");
 
                     b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.Commande", b =>
                 {
-                    b.Property<int>("IdCommande")
+                    b.Property<int>("idCommande")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ClientIdClient")
+                    b.Property<int>("ClientidClient")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("DateCommande")
@@ -63,69 +63,69 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                     b.Property<int>("idClient")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("IdCommande");
+                    b.HasKey("idCommande");
 
-                    b.HasIndex("ClientIdClient");
+                    b.HasIndex("ClientidClient");
 
                     b.ToTable("Commandes");
                 });
 
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.CommandeProduit", b =>
                 {
-                    b.Property<int>("IdCommande")
+                    b.Property<int>("idCommande")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IdProduit")
+                    b.Property<int>("idProduit")
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("PrixUnitaire")
+                    b.Property<decimal>("prixUnitaire")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Quantite")
+                    b.Property<int>("quantite")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("IdCommande", "IdProduit");
+                    b.HasKey("idCommande", "idProduit");
 
-                    b.HasIndex("IdProduit");
+                    b.HasIndex("idProduit");
 
                     b.ToTable("CommandeProduits");
                 });
 
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.Produit", b =>
                 {
-                    b.Property<int>("IdProduit")
+                    b.Property<int>("idProduit")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Categorie")
+                    b.Property<string>("categorie")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("description")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("EstDisponible")
+                    b.Property<bool>("estDisponible")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("NomProduit")
+                    b.Property<string>("nomProduit")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Prix")
+                    b.Property<decimal>("prix")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("QuantiteStock")
+                    b.Property<int>("quantiteStock")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("IdProduit");
+                    b.HasKey("idProduit");
 
                     b.ToTable("Produits");
                 });
 
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.Role", b =>
                 {
-                    b.Property<int>("IdRole")
+                    b.Property<int>("idRole")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -137,23 +137,20 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("IdRole");
+                    b.HasKey("idRole");
 
                     b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("Danielle_Mathieu_Josia_Orevil_UA2.Model.User", b =>
                 {
-                    b.Property<int>("IdUser")
+                    b.Property<int>("idUser")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("IdRole")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Nom")
                         .IsRequired()
@@ -171,9 +168,12 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("IdUser");
+                    b.Property<int>("idRole")
+                        .HasColumnType("INTEGER");
 
-                    b.HasIndex("IdRole");
+                    b.HasKey("idUser");
+
+                    b.HasIndex("idRole");
 
                     b.ToTable("Users");
                 });
@@ -182,7 +182,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                 {
                     b.HasOne("Danielle_Mathieu_Josia_Orevil_UA2.Model.Client", "Client")
                         .WithMany("commandes")
-                        .HasForeignKey("ClientIdClient")
+                        .HasForeignKey("ClientidClient")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -193,13 +193,13 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                 {
                     b.HasOne("Danielle_Mathieu_Josia_Orevil_UA2.Model.Commande", "Commandes")
                         .WithMany("CommandeProduits")
-                        .HasForeignKey("IdCommande")
+                        .HasForeignKey("idCommande")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Danielle_Mathieu_Josia_Orevil_UA2.Model.Produit", "Produits")
                         .WithMany("CommandeProduits")
-                        .HasForeignKey("IdProduit")
+                        .HasForeignKey("idProduit")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -212,7 +212,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Migrations
                 {
                     b.HasOne("Danielle_Mathieu_Josia_Orevil_UA2.Model.Role", "Roles")
                         .WithMany("Users")
-                        .HasForeignKey("IdRole")
+                        .HasForeignKey("idRole")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

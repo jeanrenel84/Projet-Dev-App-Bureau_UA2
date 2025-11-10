@@ -11,7 +11,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
     public partial class Client : ObservableObject
     {
         [Key]
-        public int IdClient { get; set; }
+        public int idClient { get; set; }
         [ObservableProperty]
         public string nom;
         [ObservableProperty]

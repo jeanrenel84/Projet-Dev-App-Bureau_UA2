@@ -45,6 +45,7 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.ViewModel
             {
                 var user = _context.Users.FirstOrDefault(u => u.UserName == Username && u.UserPassword == Password);
 
+                
                 if (user != null)
                 {
                     ErrorMessage=("Connexion réussie !");

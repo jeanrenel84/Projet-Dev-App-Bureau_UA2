@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,20 +9,25 @@ using System.Threading.Tasks;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
 {
-   public class User
+   public partial class User: ObservableObject
     {
         [Key]
-        public int IdUser { get; set; }
-        public string Nom { get; set; }
-        public string Prenom { get; set; }
-        public string UserName { get; set; }
-        public string UserPassword { get; set; }
-        public string Email { get; set; }
+        public int idUser { get; set; }
 
+        [ObservableProperty]
+        public string nom;
+        [ObservableProperty]
+        public string prenom;
+        [ObservableProperty]
+        public string userName;
+        [ObservableProperty]
+        public string userPassword;
+        [ObservableProperty]
+        public string email;
 
         //Cle etrangere vers la classe Role
         [ForeignKey("Roles")]
-        public int IdRole { get; set; }
+        public int idRole { get; set; }
         public Role Roles { get; set; }
       
        

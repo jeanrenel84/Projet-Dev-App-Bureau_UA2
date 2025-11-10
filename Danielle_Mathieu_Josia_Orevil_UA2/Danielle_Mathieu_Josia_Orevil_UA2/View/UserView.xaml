@@ -6,13 +6,21 @@
              xmlns:local="clr-namespace:Danielle_Mathieu_Josia_Orevil_UA2.View"
               xmlns:vm="clr-namespace:Danielle_Mathieu_Josia_Orevil_UA2.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="250" d:DesignWidth="600">
 
     <UserControl.DataContext>
         <vm:UserViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Width="350">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="250"/>
+
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" Width="250">
 
             <TextBlock Text="Gestion des Utilisateurs"
                    FontSize="20"
@@ -22,34 +30,53 @@
 
 
             <TextBlock Text="Nom:" />
-            <TextBox Text="{Binding SelectedUser.Nom}" />
+            <TextBox Text="{Binding UserNom}" />
 
             <TextBlock Text="Prénom:" />
-            <TextBox Text="{Binding SelectedUser.Prenom}" />
+            <TextBox Text="{Binding UserPrenom}" />
 
             <TextBlock Text="Nom d'utilisateur:" />
-            <TextBox Text="{Binding SelectedUser.UserName}" />
+            <TextBox Text="{Binding UserUserName}" />
 
             <TextBlock Text="Mot de passe:" />
-            <TextBox Text="{Binding SelectedUser.UserPassword}" />
+            <TextBox Text="{Binding UserUserPassword}" />
 
             <TextBlock Text="Email:" />
-            <TextBox Text="{Binding SelectedUser.Email}" />
+            <TextBox Text="{Binding UserEmail}" />
 
-            <TextBlock Text="ID Rôle:" />
-            <TextBox Text="{Binding SelectedUser.IdRole}" />
+           <!-- <TextBlock Text="ID Rôle:" />
+            <TextBox Text="{Binding idRole}" /> -->
 
+           
 
-            <ListBox ItemsSource="{Binding Users}"
-            SelectedItem="{Binding SelectedUser}"
-            DisplayMemberPath="UserName"
-            Height="111" Width="347"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Command="{Binding AddUserCommand}" Content="Ajouter" Width="100"/>
-                <Button Command="{Binding UpdateUserCommand}" Content="Modifier" Width="100"/>
-                <Button Command="{Binding DeleteUserCommand}" Content="Supprimer" Width="100"/>
+                <!-- Command="{Binding UpdateUserCommand}" Content="Modifier" Width="100"/>
+                <Button Command="{Binding DeleteUserCommand}" Content="Supprimer" Width="100"/>-->
             </StackPanel>
 
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Background="White">
+            <!--    Tableau pour afficher les utilisateurs-->
+
+
+            <DataGrid Grid.Row="5" ItemsSource="{Binding Users}" 
+            AutoGenerateColumns="False" 
+            SelectedItem="{Binding SelectedUser}"
+            CanUserAddRows="False" Margin="0,0,0,10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" Width="*"/>
+                    <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}" Width="*"/>
+                    <DataGridTextColumn Header="Nom Utilisateur" Binding="{Binding UserName}" Width="*"/>
+                    <DataGridTextColumn Header="Mot de passe" Binding="{Binding UserPassword}" Width="*"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                    <DataGridTextColumn Header="Role" Binding="{Binding idRole}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- fin du Datagrid-->
 
         </StackPanel>
     </Grid>
