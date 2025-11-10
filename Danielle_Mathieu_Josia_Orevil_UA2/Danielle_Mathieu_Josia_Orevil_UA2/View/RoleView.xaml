@@ -12,7 +12,7 @@
         <vm:RoleViewModel/>
     </UserControl.DataContext>
 
-    <Grid Background="#E8F0FE">
+    <Grid>
         <StackPanel HorizontalAlignment="Center" Width="350">
 
             <TextBlock Text="Gestion des Roles"
