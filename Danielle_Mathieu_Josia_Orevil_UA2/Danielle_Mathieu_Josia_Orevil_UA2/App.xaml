@@ -32,7 +32,7 @@
             <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
         </Style>
 
-        <!-- 🎨 Style des boutons avec meilleures couleurs et contraste -->
+        <!-- Style des boutons -->
         <Style TargetType="Button">
             <!-- Couleur de base du bouton -->
             <Setter Property="Background" Value="#9E77FF" />
@@ -45,13 +45,14 @@
 
             <!-- Effets au survol et au clic -->
             <Style.Triggers>
+                <!-- Couleur hover -->
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#8256E0"/>
-                    <!-- Couleur hover -->
+                    
                 </Trigger>
+                <!-- Couleur click -->
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="#693CCF"/>
-                    <!-- Couleur click -->
                 </Trigger>
             </Style.Triggers>
         </Style>
