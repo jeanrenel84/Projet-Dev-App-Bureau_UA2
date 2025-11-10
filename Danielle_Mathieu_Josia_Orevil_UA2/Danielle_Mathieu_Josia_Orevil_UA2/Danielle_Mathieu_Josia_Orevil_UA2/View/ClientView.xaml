@@ -13,7 +13,7 @@
     </UserControl.DataContext>
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Width="350">
+        <StackPanel HorizontalAlignment="Center" Width="500">
 
             <TextBlock Text="Gestion des Clients"
                        FontSize="20"
@@ -22,27 +22,38 @@
                        Margin="0,0,0,10"/>
 
             <TextBlock Text="Nom :" />
-            <TextBox Text="{Binding SelectedClient.nom, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedClient.Nom, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock Text="Prénom :" />
-            <TextBox Text="{Binding SelectedClient.prenom, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedClient.Prenom, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock Text="Email :" />
-            <TextBox Text="{Binding SelectedClient.email, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedClient.Email, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock Text="Téléphone :" />
-            <TextBox Text="{Binding SelectedClient.telephone, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedClient.Telephone, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock Text="Adresse :" />
-            <TextBox Text="{Binding SelectedClient.adresse, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding SelectedClient.Adresse, UpdateSourceTrigger=PropertyChanged}" />
 
-            <ListBox ItemsSource="{Binding Clients}"
-                     SelectedItem="{Binding SelectedClient}"
-                     DisplayMemberPath="nom"
-                     Height="100"
-                     Margin="0,10,0,0"/>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <DataGrid Grid.Row="5" ItemsSource="{Binding Clients}" 
+            AutoGenerateColumns="False" 
+            SelectedItem="{Binding SelectedClient}"
+            CanUserAddRows="False" Margin="0,30,0,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" Width="*"/>
+                    <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}" Width="*"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="2*"/>
+                    <DataGridTextColumn Header="Telephone" Binding="{Binding Telephone}" Width="*"/>
+                    <DataGridTextColumn Header="Adresse" Binding="{Binding Adresse}" Width="*"/>
+                 
+                </DataGrid.Columns>
+            </DataGrid>
+
+            
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
                 <Button Command="{Binding AddClientCommand}" Content="Ajouter" Width="100" Margin="5,0"/>
                 <Button Command="{Binding UpdateClientCommand}" Content="Modifier" Width="100" Margin="5,0"/>
                 <Button Command="{Binding DeleteClientCommand}" Content="Supprimer" Width="100" Margin="5,0"/>

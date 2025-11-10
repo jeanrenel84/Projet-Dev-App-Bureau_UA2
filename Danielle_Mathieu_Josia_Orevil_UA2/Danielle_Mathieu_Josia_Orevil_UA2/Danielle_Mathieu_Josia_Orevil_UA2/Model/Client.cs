@@ -30,9 +30,9 @@ namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
         public bool IsValid(out List<string> errors)
         {
             errors = new List<string>();
-            if (string.IsNullOrWhiteSpace(nom)) errors.Add("Le nom est obligatoire.");
-            if (string.IsNullOrWhiteSpace(prenom)) errors.Add("Le prénom est obligatoire.");
-            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@")) errors.Add("Format d'email invalide.");
+            if (string.IsNullOrWhiteSpace(Nom)) errors.Add("Le nom est obligatoire.");
+            if (string.IsNullOrWhiteSpace(Prenom)) errors.Add("Le prénom est obligatoire.");
+            if (string.IsNullOrWhiteSpace(Email) || !Email.Contains("@")) errors.Add("Format d'email invalide.");
             return errors.Count == 0;
         }
     }

@@ -8,18 +8,43 @@ using System.Threading.Tasks;
 
 namespace Danielle_Mathieu_Josia_Orevil_UA2.Model
 {
-    public class Produit : ObservableObject
+    public partial class Produit : ObservableObject
     {
         [Key]
         public int idProduit { get; set; }
-        public string nomProduit { get; set; }
-        public string description { get; set; }
-        public string categorie {  get; set; }
-        public decimal prix { get; set; }
-        public int quantiteStock { get; set; }
-        public bool estDisponible { get; set; }
+
+        [ObservableProperty]
+        private string nomProduit;
+
+        [ObservableProperty]
+        private string description;
+
+        [ObservableProperty]
+        private string categorie;
+
+        [ObservableProperty]
+        private decimal prix;
+
+        [ObservableProperty]
+        private int quantiteStock;
+
+        [ObservableProperty]
+        private bool estDisponible;
 
         //Relation 1-N avec CommandeProduit
         public ICollection<CommandeProduit> CommandeProduits { get; set; }=new List<CommandeProduit>();
+
+        public bool IsValid(out List<string> errors)
+        {
+            errors = new List<string>();
+            if (string.IsNullOrWhiteSpace(NomProduit))
+                errors.Add("Le nom du produit est obligatoire.");
+            if (Prix <= 0)
+                errors.Add("Le prix doit être supérieur à 0.");
+            if (QuantiteStock < 0)
+                errors.Add("La quantité ne peut pas être négative.");
+            return errors.Count == 0;
+            
+        }
     }
 }

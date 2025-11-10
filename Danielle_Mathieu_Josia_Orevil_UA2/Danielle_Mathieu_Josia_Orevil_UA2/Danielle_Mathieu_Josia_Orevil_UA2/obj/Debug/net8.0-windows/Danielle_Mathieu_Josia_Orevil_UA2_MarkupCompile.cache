@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\UA2C#Project\Danielle_Mathieu_Josia_Orevil_UA2\Danielle_Mathieu_Josia_Orevil_UA2\obj\Debug\net8.0-windows\
+C:\Users\danie\source\repos\Projet-Dev-App-Bureau_UA2\Danielle_Mathieu_Josia_Orevil_UA2\Danielle_Mathieu_Josia_Orevil_UA2\Danielle_Mathieu_Josia_Orevil_UA2\obj\Debug\net8.0-windows\
 Danielle_Mathieu_Josia_Orevil_UA2
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-D:\UA2C#Project\Danielle_Mathieu_Josia_Orevil_UA2\Danielle_Mathieu_Josia_Orevil_UA2\App.xaml
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+C:\Users\danie\source\repos\Projet-Dev-App-Bureau_UA2\Danielle_Mathieu_Josia_Orevil_UA2\Danielle_Mathieu_Josia_Orevil_UA2\Danielle_Mathieu_Josia_Orevil_UA2\App.xaml
 8-561800890
 
 40-505670911
-2181281518691
+218908985063
 MainWindow.xaml;View\ClientView.xaml;View\CommandeView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ProduitView.xaml;View\RoleView.xaml;View\UserView.xaml;
 
-False
+True
 

@@ -12,7 +12,7 @@
         <vm:ProduitViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <StackPanel HorizontalAlignment="Center" Width="350">
+        <StackPanel HorizontalAlignment="Center" Width="500">
 
             <TextBlock Text="Gestion des Produits"
                    FontSize="20"
@@ -39,19 +39,30 @@
             <CheckBox IsChecked="{Binding SelectedProduit.EstDisponible}"
                   Content="Disponible"
                   HorizontalAlignment="Center"/>
-            <ListBox ItemsSource="{Binding Produits}"
-                SelectedItem="{Binding SelectedProduit}"
-                    DisplayMemberPath="NomProduit"
-                    Height="100"/>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Command="{Binding AddProduitCommand}" Content="Ajouter" Width="100"/>
-                <Button Command="{Binding UpdateProduitCommand}" Content="Modifier" Width="100"/>
-                <Button Command="{Binding DeleteProduitCommand}" Content="Supprimer" Width="100"/>
+            <DataGrid Grid.Row="5" ItemsSource="{Binding Produits}" 
+                AutoGenerateColumns="False" 
+                SelectedItem="{Binding SelectedProduit}"
+                CanUserAddRows="False" Margin="0,30,0,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="NomProduit" Binding="{Binding NomProduit}" Width="*"/>
+                    <DataGridTextColumn Header="Prix" Binding="{Binding Prix}" Width="0.5*"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                    <DataGridTextColumn Header="Categorie" Binding="{Binding Categorie}" Width="*"/>
+                    <DataGridTextColumn Header="QuantiteStock" Binding="{Binding QuantiteStock}" Width="*"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                <Button Command="{Binding AddClientCommand}" Content="Ajouter" Width="100" Margin="5,0"/>
+                <Button Command="{Binding UpdateClientCommand}" Content="Modifier" Width="100" Margin="5,0"/>
+                <Button Command="{Binding DeleteClientCommand}" Content="Supprimer" Width="100" Margin="5,0"/>
             </StackPanel>
 
-           
-            
+
+
         </StackPanel>
     </Grid>
 
